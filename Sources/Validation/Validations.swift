@@ -116,13 +116,13 @@ extension Validations where M: Reflectable {
 /// A collection of errors thrown by validatable models validations
 public struct ValidateErrors: ValidationError {
     /// the errors thrown
-    var errors: [ValidationError]
+    public var errors: [ValidationError]
 
     /// See ValidationError.keyPath
-    var path: [String]
+    public var path: [String]
 
     /// See ValidationError.reason
-    var reason: String {
+    public var reason: String {
         return errors.map { error in
             var mutableError = error
             mutableError.path = path + error.path
